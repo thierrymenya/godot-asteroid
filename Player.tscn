@@ -1,0 +1,210 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://ship.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32.1519, 32.2055 )
+
+[node name="Player" type="RigidBody2D"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+script/script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+rotationTorque = 1000
+trustSpeed = Vector2( 0, 100 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+rect = Rect2( -30, -30, 60, 60 )
+
+[node name="frontTruster" type="Particles2D" parent="."]
+
+transform/rot = 180.0
+config/amount = 60
+config/lifetime = 5.40354
+config/time_scale = 17.3576
+config/emitting = false
+config/process_mode = 1
+params/direction = 0.0
+params/spread = 10.0
+params/linear_velocity = 20.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 9.8
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 1.0
+params/final_size = 1.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+
+[node name="rearTruster" type="Particles2D" parent="."]
+
+config/amount = 60
+config/lifetime = 5.40354
+config/time_scale = 17.3576
+config/emitting = false
+config/process_mode = 1
+params/direction = 0.0
+params/spread = 10.0
+params/linear_velocity = 20.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 9.8
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 1.0
+params/final_size = 1.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+
+[node name="leftTopTruster" type="Particles2D" parent="."]
+
+transform/pos = Vector2( 0, 30 )
+transform/rot = 90.0
+config/amount = 27
+config/lifetime = 3.73461
+config/time_scale = 10.1882
+config/emitting = false
+config/process_mode = 1
+params/direction = 0.0
+params/spread = 10.0
+params/linear_velocity = 20.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 9.8
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 1.0
+params/final_size = 1.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+
+[node name="rightTopTruster" type="Particles2D" parent="."]
+
+transform/pos = Vector2( 0, 30 )
+transform/rot = -90.0
+config/amount = 27
+config/lifetime = 3.73461
+config/time_scale = 10.1882
+config/emitting = false
+config/process_mode = 1
+params/direction = 0.0
+params/spread = 10.0
+params/linear_velocity = 20.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 9.8
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 1.0
+params/final_size = 1.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+
+[node name="rightBottomTruster" type="Particles2D" parent="."]
+
+transform/pos = Vector2( 0, -30 )
+transform/rot = -90.0
+config/amount = 27
+config/lifetime = 3.73461
+config/time_scale = 10.1882
+config/emitting = false
+config/process_mode = 1
+params/direction = 0.0
+params/spread = 10.0
+params/linear_velocity = 20.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 9.8
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 1.0
+params/final_size = 1.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+
+[node name="leftBottomTruster" type="Particles2D" parent="."]
+
+transform/pos = Vector2( 0, -30 )
+transform/rot = 90.0
+config/amount = 27
+config/lifetime = 3.73461
+config/time_scale = 10.1882
+config/emitting = false
+config/process_mode = 1
+params/direction = 0.0
+params/spread = 10.0
+params/linear_velocity = 20.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 9.8
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 1.0
+params/final_size = 1.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+
+[connection signal="exit_viewport" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_exit_viewport"]
+
+

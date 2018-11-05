@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=1]
+
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://gun.tscn" type="PackedScene" id=2]
+[ext_resource path="res://simpleBullet.tscn" type="PackedScene" id=3]
+[ext_resource path="res://BigAsteroid.tscn" type="PackedScene" id=4]
+
+[node name="Node2D" type="Node2D"]
+
+transform/scale = Vector2( 0.767209, 0.713482 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 687.449, 355.207 )
+gravity_scale = 0.0
+
+[node name="gun" parent="Player" instance=ExtResource( 2 )]
+
+Bullet = ExtResource( 3 )
+velocity = 500.0
+fireSpeed = 0.5
+
+[node name="BigAsteroid" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 348.313, 318.361 )
+gravity_scale = 0.0
+
+
+[editable path="Player/gun"]
